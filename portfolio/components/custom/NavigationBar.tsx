@@ -92,8 +92,6 @@ export default function Navbar() {
   );
 }
 
-/* ---------- Components ---------- */
-
 export const GlowingLine = () => (
   <div
     className="absolute bottom-0 left-6 right-6 h-px 
@@ -142,9 +140,9 @@ const NavLinkAccess = ({
   activeSection?: string;
 }) => {
   const navLinks = [
+    { href: "#work", label: "My Works" },
     { href: "#services", label: "Services" },
     { href: "#about", label: "About Me" },
-    { href: "#work", label: "My Works" },
   ];
 
   const handleScroll = (

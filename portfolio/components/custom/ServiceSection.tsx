@@ -123,35 +123,6 @@ export default function ServicesSection() {
             );
           })}
         </div>
-
-        {/* Bottom CTA */}
-        <div className="mt-20 text-center">
-          <p className="text-slate-400 mb-6 text-sm md:text-base">
-            Ready to bring your vision to life?
-          </p>
-          <a
-            href="#contact"
-            className="group inline-flex items-center gap-2 rounded-full border-2 border-[#F5C16C]/40 
-              px-8 py-3 text-sm font-medium text-[#F5C16C] 
-              hover:bg-[#F5C16C] hover:text-[#0B1220] hover:border-[#F5C16C] 
-              transition-all duration-300 hover:shadow-[0_0_25px_rgba(245,193,108,0.3)]"
-          >
-            <span className="tracking-wide">Let&apos;s Collaborate</span>
-            <svg
-              className="w-4 h-4 transition-transform group-hover:translate-x-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M13 7l5 5m0 0l-5 5m5-5H6"
-              />
-            </svg>
-          </a>
-        </div>
       </div>
     </section>
   );
