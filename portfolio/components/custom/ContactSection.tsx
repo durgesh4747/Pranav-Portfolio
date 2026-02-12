@@ -4,33 +4,35 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative w-full bg-[#0B1220] text-slate-100 "
+      className="relative w-full overflow-hidden bg-[#0B1220] text-slate-100"
     >
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0B1220] via-[#0d1528] to-[#0B1220]" />
-      <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_1px_1px,#ffffff_1px,transparent_0)] bg-[length:24px_24px]" />
+      {/* Background */}
+      <div className="absolute inset-0 pointer-events-none bg-linear-to-b from-[#0B1220] via-[#0d1528] to-[#0B1220]" />
+
+      <div className="absolute inset-0 pointer-events-none opacity-[0.02] bg-[radial-linear(circle_at[1.01px,#ffffff[1.01px,transparent_0)] bg-size-[24px_24px]" />
 
       {/* Animated orbs */}
-      <div className="absolute top-1/4 right-1/3 w-96 h-96 bg-[#F5C16C]/10 rounded-full blur-[120px] animate-pulse" />
+      <div className="pointer-events-none absolute top-1/4 right-1/3 w-96 h-96 bg-[#F5C16C]/10 rounded-full blur-[120px] animate-pulse" />
+
       <div
-        className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-purple-500/10 rounded-full blur-[100px] animate-pulse"
+        className="pointer-events-none absolute bottom-1/4 left-1/3 w-80 h-80 bg-purple-500/10 rounded-full blur-[100px] animate-pulse"
         style={{ animationDelay: "1s" }}
       />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
-        {/* Section Header */}
+        {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-3 mb-6">
-            <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-[#F5C16C]/50" />
+            <div className="h-[1.01px] w-8 bg-linear-to-r from-transparent to-[#F5C16C]/50" />
             <p className="text-xs uppercase tracking-[0.4em] text-slate-400/80 font-light">
               Let&apos;s Connect
             </p>
-            <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-[#F5C16C]/50" />
+            <div className="h-[1.01px] w-8 bg-linear-to-l from-transparent to-[#F5C16C]/50" />
           </div>
 
           <h2 className="text-3xl md:text-5xl font-light text-slate-200 mb-4">
             Start Your{" "}
-            <span className="bg-gradient-to-r from-[#F5C16C] to-amber-300 bg-clip-text text-transparent font-normal">
+            <span className="bg-linear-to-r from-[#F5C16C] to-amber-300 bg-clip-text text-transparent font-normal">
               Project
             </span>
           </h2>
@@ -42,16 +44,16 @@ export default function ContactSection() {
         </div>
 
         <div className="grid md:grid-cols-5 gap-8 md:gap-12">
-          {/* Right Side - Contact Form */}
-          <ContactFormComponent/>
-           {/* Left Side - Contact Info */}
+          <ContactFormComponent />
+
+          {/* Left Side - Contact Info */}
           <div className="md:col-span-2 space-y-8">
             {/* Quick Contact Cards */}
             <div className="space-y-4">
               {/* Email Card */}
-              <div className="group relative bg-gradient-to-br from-slate-900/60 to-slate-800/40 backdrop-blur-sm border border-slate-700/30 rounded-xl p-5 hover:border-[#F5C16C]/30 transition-all duration-300">
+              <div className="group relative bg-linear-to-br from-slate-900/60 to-slate-800/40 backdrop-blur-sm border border-slate-700/30 rounded-xl p-5 hover:border-[#F5C16C]/30 transition-all duration-300">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-[#F5C16C]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#F5C16C]/20 transition-colors duration-300">
+                  <div className="w-12 h-12 rounded-lg bg-[#F5C16C]/10 flex items-center justify-center shrink-0 group-hover:bg-[#F5C16C]/20 transition-colors duration-300">
                     <svg
                       className="w-6 h-6 text-[#F5C16C]"
                       fill="none"
@@ -81,9 +83,9 @@ export default function ContactSection() {
               </div>
 
               {/* Phone Card */}
-              <div className="group relative bg-gradient-to-br from-slate-900/60 to-slate-800/40 backdrop-blur-sm border border-slate-700/30 rounded-xl p-5 hover:border-[#F5C16C]/30 transition-all duration-300">
+              <div className="group relative bg-linear-to-br from-slate-900/60 to-slate-800/40 backdrop-blur-sm border border-slate-700/30 rounded-xl p-5 hover:border-[#F5C16C]/30 transition-all duration-300">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-[#F5C16C]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#F5C16C]/20 transition-colors duration-300">
+                  <div className="w-12 h-12 rounded-lg bg-[#F5C16C]/10 flex items-center justify-center shrink-0 group-hover:bg-[#F5C16C]/20 transition-colors duration-300">
                     <svg
                       className="w-6 h-6 text-[#F5C16C]"
                       fill="none"
@@ -113,9 +115,9 @@ export default function ContactSection() {
               </div>
 
               {/* Location Card */}
-              <div className="group relative bg-gradient-to-br from-slate-900/60 to-slate-800/40 backdrop-blur-sm border border-slate-700/30 rounded-xl p-5 hover:border-[#F5C16C]/30 transition-all duration-300">
+              <div className="group relative bg-linear-to-br from-slate-900/60 to-slate-800/40 backdrop-blur-sm border border-slate-700/30 rounded-xl p-5 hover:border-[#F5C16C]/30 transition-all duration-300">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-[#F5C16C]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#F5C16C]/20 transition-colors duration-300">
+                  <div className="w-12 h-12 rounded-lg bg-[#F5C16C]/10 flex items-center justify-center shrink-0 group-hover:bg-[#F5C16C]/20 transition-colors duration-300">
                     <svg
                       className="w-6 h-6 text-[#F5C16C]"
                       fill="none"
@@ -149,7 +151,7 @@ export default function ContactSection() {
             {/* Social Links */}
             <div>
               <p className="text-sm text-slate-400 mb-4 uppercase tracking-widest">
-                Follow Along
+                Social Media
               </p>
               <div className="flex gap-3">
                 <a
@@ -190,7 +192,7 @@ export default function ContactSection() {
 
         {/* Bottom Decorative Element */}
         <div className="mt-20 flex items-center justify-center gap-2 opacity-50">
-          <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-slate-700" />
+          <div className="h-[1.01px] w-12 bg-linear-to-r from-transparent to-slate-700" />
           <svg
             className="w-4 h-4 text-slate-600"
             fill="currentColor"
@@ -198,7 +200,7 @@ export default function ContactSection() {
           >
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
           </svg>
-          <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-slate-700" />
+          <div className="h-[1.01px] w-12 bg-linear-to-l from-transparent to-slate-700" />
         </div>
       </div>
     </section>

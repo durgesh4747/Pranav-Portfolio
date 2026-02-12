@@ -33,22 +33,13 @@ export const ContentSchema = defineType({
       name: "link",
       title: "Video Link",
       type: "url",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: "Thumbnail",
-      title: "Thumbnail",
-      type: "image",
-      description: "REQUIRED. This is the Thumbnail for your video.",
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: "alt",
-          type: "string",
-          title: "Alternative Text",
-        },
-      ],
+      name: "duration",
+      title: "Duration",
+      type: "string",
+      description: "Example: 0:30 or 3:45",
       validation: (Rule) => Rule.required(),
     }),
     defineField({

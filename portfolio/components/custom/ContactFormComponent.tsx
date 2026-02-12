@@ -61,9 +61,11 @@ export default function ContactFormComponent() {
               placeholder="Enter your Email"
             />
             <div className="absolute inset-0 rounded-lg bg-[#F5C16C]/5 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none" />
-             {state.errors?.email && (
-            <p className="text-yellow-500 text-sm ml-2">{state.errors.email}</p>
-          )}
+            {state.errors?.email && (
+              <p className="text-yellow-500 text-sm ml-2">
+                {state.errors.email}
+              </p>
+            )}
           </div>
         </div>
 
@@ -91,18 +93,10 @@ export default function ContactFormComponent() {
         <div className="flex items-center gap-4">
           <button
             type="submit"
-            className="group relative flex-1 bg-gradient-to-r from-[#F5C16C] to-amber-400 text-[#0B1220] font-medium py-4 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(245,193,108,0.4)] hover:scale-[1.02] active:scale-[0.98]"
+            className="group relative flex-1 bg-linear-to-r from-[#F5C16C] to-amber-400 text-[#0B1220] font-medium py-4 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(245,193,108,0.4)] hover:scale-[1.02] active:scale-[0.98]"
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
-              {isPending ? (
-              <>
-                Sending...
-              </>
-            ) : (
-              <>
-                Send Message
-              </>
-            )}
+              {isPending ? <>Sending...</> : <>Send Message</>}
               <svg
                 className="w-5 h-5 transition-transform group-hover:translate-x-1"
                 fill="none"
@@ -117,16 +111,16 @@ export default function ContactFormComponent() {
                 />
               </svg>
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-[#F5C16C] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-linear-to-r from-amber-400 to-[#F5C16C] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
         </div>
         {state.message && (
-            <p
-              className={`text-center text-sm mt-4 ${state.success ? "text-green-500" : "text-yellow-500"}`}
-            >
-              {state.message}
-            </p>
-          )}
+          <p
+            className={`text-center text-sm mt-4 ${state.success ? "text-green-500" : "text-yellow-500"}`}
+          >
+            {state.message}
+          </p>
+        )}
 
         {/* Privacy Note */}
         <p className="text-xs text-slate-500 text-center">
