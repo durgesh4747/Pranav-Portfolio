@@ -10,7 +10,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["services", "about", "work", "contact"];
+      const sections = ["home","services", "about", "work", "contact"];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -41,7 +41,7 @@ export default function Navbar() {
         <div className="flex h-14 items-center justify-between px-6">
           {/* Brand Name */}
           <Link
-            href={"#home"}
+          href={'/'}
             className="text-base font-semibold tracking-wide text-[#F5C16C]"
           >
             Pranav
@@ -140,6 +140,7 @@ const NavLinkAccess = ({
   activeSection?: string;
 }) => {
   const navLinks = [
+    { href: "#home", label: "Home" },
     { href: "#work", label: "My Works" },
     { href: "#services", label: "Services" },
     { href: "#about", label: "About Me" },
