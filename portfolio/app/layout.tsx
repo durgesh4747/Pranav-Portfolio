@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${geistMono.variable} ${geistSans.variable}`}>
         {children}
-        <GoogleAnalytics gaId='process.env.NEXT_PUBLIC_GA_ID' />
+        <GoogleAnalytics gaId='process.env.NEXT_PUBLIC_GOGGLEA_ID' />
       </body>
     </html>
   );
