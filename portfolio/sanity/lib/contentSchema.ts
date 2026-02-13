@@ -2,7 +2,7 @@ import { defineField, defineType } from "sanity";
 
 export const ContentSchema = defineType({
   name: "work",
-  title: "My Work",
+  title: "My Videos",
   type: "document",
   fields: [
     defineField({
@@ -19,12 +19,11 @@ export const ContentSchema = defineType({
         list: [
           { title: "Reel", value: "Reel" },
           { title: "Shorts", value: "Shorts" },
-          { title: "YouTube Video", value: "YouTube Video" },
           { title: "Events", value: "Events" },
           { title: "Property Tour", value: "Property Tour" },
           { title: "Real Estate", value: "Real Estate" },
-          { title: "Custom Video", value: "Custom Video" },
           { title: "Wedding", value: "Wedding" },
+          { title: "Custom Video", value: "Custom Video" },
         ],
       },
       validation: (Rule) => Rule.required(),

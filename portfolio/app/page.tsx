@@ -29,7 +29,7 @@ export const revalidate = 60; // every minute
 export default async function Home() {
   const projects: [Project] = await client.fetch(query);
   return (
-    <main className="flex flex-col bg-[#0B1220] overflow-hidden">
+    <main className="flex flex-col bg-[#0B1220] overflow-hidden italic">
       <NavigationBar />
       <HeroSection />
       <WorkSection projects={projects} />

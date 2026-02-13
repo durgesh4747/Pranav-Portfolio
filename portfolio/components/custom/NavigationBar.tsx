@@ -10,7 +10,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home","services", "about", "work", "contact"];
+      const sections = ["home", "services", "about", "work", "contact"];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -39,12 +39,12 @@ export default function Navbar() {
         <GlowingLine />
 
         <div className="flex h-14 items-center justify-between px-6">
-          {/* Brand Name */}
+          {/* Name / Logo */}
           <Link
-          href={'/'}
+            href={"/"}
             className="text-base font-semibold tracking-wide text-[#F5C16C]"
           >
-            Pranav
+            Pranav Pargi
           </Link>
 
           {/* Desktop Nav */}
