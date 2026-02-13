@@ -10,6 +10,7 @@
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
+    "@next/third-parties": "^16.1.6",
     "@react-email/components": "^1.0.7",
     "@react-email/render": "^2.0.4",
     "@sanity/image-url": "^1.2.0",
