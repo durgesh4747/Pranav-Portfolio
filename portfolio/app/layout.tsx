@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+// import { GoogleAnalytics } from '@next/third-parties/google';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pranav Portfolio | Video Editor",
-  description: "A Professional Portfolio design | Video Editor",
+  title: "Professional Video Editor | Reels, YouTube & Color Grading",
+  description:
+    "Boost your engagement with high-retention video editing. We specialize in fast-paced Reels, trending audio sync, subtitles, and VFX. Turn casual viewers into followers",
 };
 
 export default function RootLayout({
@@ -24,10 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${geistMono.variable} ${geistSans.variable}`}
-      >
+      <body className={`${geistMono.variable} ${geistSans.variable}`}>
         {children}
+        {/* <GoogleAnalytics gaId='process.env.NEXT_PUBLIC_GA_ID' /> */}
       </body>
     </html>
   );
