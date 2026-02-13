@@ -39,7 +39,7 @@ export default function HeroSection() {
           <div className="absolute -bottom-3 -left-2 md:-bottom-4 md:-left-4 w-6 h-6 md:w-8 md:h-8 border-l-2 border-b-2 border-[#F5C16C]/30" />
           <div className="absolute -bottom-3 -right-2 md:-bottom-4 md:-right-4 w-6 h-6 md:w-8 md:h-8 border-r-2 border-b-2 border-[#F5C16C]/30" />
 
-          <TextHoverEffect text="PRANAV" />
+          <TextHoverEffect text="PRANAV"/>
         </div>
 
         {/* Headline */}
@@ -62,25 +62,11 @@ export default function HeroSection() {
             className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full 
               bg-linear-to-r from-[#F5C16C] to-amber-400 px-7 py-3 text-sm font-medium 
               text-[#0B1220] transition-all duration-300 hover:shadow-[0_0_25px_rgba(245,193,108,0.3)]
-              hover:scale-105 active:scale-95"
+              hover:scale-105 active:scale-95 "
           >
             <span className="relative z-10 tracking-wide">
               Explore Portfolio
             </span>
-
-            <svg
-              className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M13 7l5 5m0 0l-5 5m5-5H6"
-              />
-            </svg>
           </a>
         </div>
       </div>

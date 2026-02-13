@@ -37,9 +37,7 @@ interface WorkProps {
 export default function WorkSection({ projects }: WorkProps) {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
-  /* ----------------------------------
-     SAFE YOUTUBE EMBED CONVERTER
-  -----------------------------------*/
+  // YT Link embed for iframe and thumbnail.
   const getEmbedUrl = (url: string) => {
     try {
       const parsed = new URL(url);
@@ -64,9 +62,7 @@ export default function WorkSection({ projects }: WorkProps) {
     }
   };
 
-  /* ----------------------------------
-     LOCK BACKGROUND SCROLL
-  -----------------------------------*/
+  // Bg Scroll lock when videos are on.
   useEffect(() => {
     if (activeVideo) {
       document.body.style.overflow = "hidden";
@@ -80,7 +76,6 @@ export default function WorkSection({ projects }: WorkProps) {
   }, [activeVideo]);
 
   if (!projects?.length) return null;
-
   return (
     <section
       id="work"
@@ -114,7 +109,7 @@ export default function WorkSection({ projects }: WorkProps) {
           </p>
         </div>
 
-        {/* GRID */}
+        {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
           {projects.map((data) => (
             <div
@@ -123,8 +118,7 @@ export default function WorkSection({ projects }: WorkProps) {
               className="
                 group relative aspect-9/16 rounded-2xl overflow-hidden cursor-pointer
                 transition-transform duration-300
-                md:hover:scale-[1.05] hover:
-              "
+                md:hover:scale-[1.05] "
             >
               {/* Thumbnail */}
               {(() => {
@@ -161,7 +155,7 @@ export default function WorkSection({ projects }: WorkProps) {
                 </div>
               </div>
 
-              {/* Info Always Visible */}
+              {/* Video Info*/}
               <div className="absolute bottom-0 left-0 right-0 p-4">
                 <p className="text-white font-normal text-sm mb-1">
                   {data.title}
@@ -185,7 +179,7 @@ export default function WorkSection({ projects }: WorkProps) {
         </div>
       </div>
 
-      {/* VIDEO MODAL */}
+      {/* Video Modal */}
       <AnimatePresence>
         {activeVideo && (
           <motion.div

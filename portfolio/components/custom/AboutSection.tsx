@@ -68,7 +68,7 @@ export default function AboutSection() {
               </h3>
 
               <p className="text-slate-400 leading-relaxed font-light mb-4">
-                Hello! I&apos;m Pranav, an enthusiastic video editor by
+                Hello! I&apos;m Pranav pargi, an enthusiastic video editor by
                 profession. I have been working for more than two years in the
                 field of transforming raw footage into stunning visual
                 narratives...
@@ -111,7 +111,7 @@ export default function AboutSection() {
 
             {/* Stats */}
             <div className="flex flex-wrap gap-8 pt-4">
-              {/* stats unchanged */}
+              <MyStats />
             </div>
           </div>
         </div>
@@ -119,3 +119,40 @@ export default function AboutSection() {
     </section>
   );
 }
+
+const MyStats = () => {
+  return (
+    <div className="flex flex-wrap gap-8 pt-4 cursor-default">
+      <div className="group">
+        <p className="text-3xl font-light text-[#F5C16C] mb-1 group-hover:scale-110 transition-transform">
+          2+
+        </p>
+        <p className="text-xs text-slate-500 uppercase tracking-widest">
+          Years Experience
+        </p>
+      </div>
+
+      <div className="h-16 w-[1.01px] bg-linear-to-b from-transparent via-slate-700 to-transparent" />
+
+      <div className="group">
+        <p className="text-3xl font-light text-[#F5C16C] mb-1 group-hover:scale-110 transition-transform">
+          300+
+        </p>
+        <p className="text-xs text-slate-500 uppercase tracking-widest">
+          Projects Completed
+        </p>
+      </div>
+
+      <div className="h-16 w-[1.01px] bg-linear-to-b from-transparent via-slate-700 to-transparent" />
+
+      <div className="group">
+        <p className="text-3xl font-light text-[#F5C16C] mb-1 group-hover:scale-110 transition-transform">
+          200+
+        </p>
+        <p className="text-xs text-slate-500 uppercase tracking-widest">
+          Happy Clients
+        </p>
+      </div>
+    </div>
+  );
+};

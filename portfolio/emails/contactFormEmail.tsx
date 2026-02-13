@@ -25,12 +25,12 @@ export default function ContactFormEmail({
   return (
     <Html>
       <Head />
-      <Preview>New message from your Portfolio</Preview>
+      <Preview>Hey, there&apos;s a new message from your Portfolio</Preview>
       <Tailwind>
         <Body className="bg-gray-100 font-sans">
           <Container className="bg-white border border-gray-200 my-10 px-10 py-4 rounded-md shadow-md">
             <Heading className="text-xl font-bold text-gray-800">
-              You have a new message!
+              Pranav you have got a new message!
             </Heading>
             <Text className="text-gray-700">
               <strong>From:</strong> {name}

@@ -1,7 +1,7 @@
 "use server";
 
-import { Resend } from "resend";
 import React from "react";
+import { Resend } from "resend";
 import { contactFormSchema } from "@/lib/formSchema";
 import ContactFormEmail from "@/emails/contactFormEmail";
 
@@ -39,7 +39,7 @@ export const sendEmail = async (
     };
   }
 
-  const { name, email, message } = validatedFields.data;
+  const { name, email, message } = validatedFields.data; // As safeparse is a zod func. that return either success and data or success and error.
 
   try {
     // Render the Email Template
@@ -50,8 +50,8 @@ export const sendEmail = async (
     });
 
     const { error } = await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>",
-      to: "durgeshsutariya07@gmail.com", 
+      from: "Portfolio Contact <onboarding@resend.dev>", // Mandatory for client's without domain huh.
+      to: "durgeshsutariya07@gmail.com", // Remember to change
       replyTo: email,
       subject: `New Message from ${name}`,
       react: emailContent,
