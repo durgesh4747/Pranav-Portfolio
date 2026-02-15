@@ -51,7 +51,7 @@ export const sendEmail = async (
 
     const { error } = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>", // Mandatory for client's without domain huh.
-      to: "durgeshsutariya07@gmail.com", // Remember to change
+      to: "pranavpargi32@gmail.com",
       replyTo: email,
       subject: `New Message from ${name}`,
       react: emailContent,
