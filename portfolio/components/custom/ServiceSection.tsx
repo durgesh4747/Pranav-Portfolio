@@ -3,7 +3,7 @@ export const servicesData = [
     number: "01",
     title: "Social Media Content",
     description:
-      "Engaging reels, shorts, and viral-ready content optimized for Instagram and YouTube Fast-paced edits that hook viewers in the first 3 seconds.",
+      "Engaging reels, shorts, and viral-ready content optimized for Instagram and YouTube. Fast-paced edits that hook viewers in the first 3 seconds.",
     tags: ["Reels", "Shorts"],
   },
   {
@@ -28,61 +28,62 @@ export const servicesData = [
     tags: ["Property Tours", "Real Estate"],
   },
 ];
+
 export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative w-full overflow-hidden bg-[#0B1220] text-slate-100 py-20 md:py-18"
+      className="relative w-full overflow-hidden bg-[#1D1937] text-slate-100 py-24"
     >
-      {/* Background elements */}
-      <div className="absolute inset-0 pointer-events-none bg-linear-to-b from-[#0B1220] via-[#0d1528] to-[#0B1220]" />
-
-      <div className="absolute inset-0 pointer-events-none opacity-[0.02] bg-[radial-gradient(circle_at_1px_1px,#ffffff_1px,transparent_0)] bg-size-[24px_24px]" />
-
-      {/* Floating accent */}
-      <div className="pointer-events-none absolute top-1/4 right-1/4 w-72 h-72 bg-[#F5C16C]/5 rounded-full blur-[100px]" />
+      {/* BG */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,#151238_0%,#0B1220_100%)]" />
+        <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-size-[45px_45px]" />
+        <div className="absolute top-1/2 left-[-10%] w-96 h-96 bg-purple-500/5 rounded-full blur-[120px]" />
+      </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-3 mb-6">
-            <div className="h-[1.01px] w-8 bg-linear-to-r from-transparent to-[#F5C16C]/50" />
-            <p className="text-xs uppercase tracking-[0.4em] text-slate-400/80 font-light">
-              What I Offer
+            <div className="h-[1.1px] w-8 bg-linear-to-r from-transparent to-[#F5C16C]/50" />
+            <p className="text-[10px] uppercase tracking-[0.5em] text-[#F5C16C]/80 font-bold font-mono">
+              The Workflow
             </p>
-            <div className="h-[1.01px] w-8 bg-linear-to-l from-transparent to-[#F5C16C]/50" />
+            <div className="h-[1.1px] w-8 bg-linear-to-l from-transparent to-[#F5C16C]/50" />
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-light text-slate-200 mb-4">
+          <h2 className="text-4xl md:text-6xl font-serif italic text-white mb-6 tracking-tighter">
             Creative{" "}
-            <span className="bg-linear-to-r from-[#F5C16C] to-amber-300 bg-clip-text text-transparent font-normal">
+            <span className="text-[#F5C16C] not-italic font-sans font-black uppercase tracking-tight">
               Services
             </span>
           </h2>
 
-          <p className="text-slate-400 text-sm md:text-base max-w-2xl mx-auto font-light">
-            2+ years of experience crafting visual stories with Adobe Premiere
-            Pro & After Effects
+          <p className="text-slate-400 text-sm md:text-base max-w-xl mx-auto font-light leading-relaxed">
+            Crafting visual stories with precision using professional-grade
+            tools like
+            <span className="text-white"> Premiere Pro </span> &
+            <span className="text-white"> After Effects</span>.
           </p>
         </div>
 
         {/* Services List */}
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 gap-6">
           {servicesData.map((items, index) => (
             <div className="group relative" key={index}>
-              {/* Hover glow */}
-              <div className="pointer-events-none absolute inset-0 bg-linear-to-r from-[#F5C16C]/0 via-[#F5C16C]/5 to-[#F5C16C]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl" />
+              <div className="absolute inset-0 bg-[#F5C16C]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-2xl" />
 
               {/* Card */}
-              <div className="relative bg-linear-to-br from-slate-900/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/30 rounded-2xl p-6 md:p-8 hover:border-[#F5C16C]/30 transition-all duration-500 group-hover:translate-x-2">
-                {/* Left accent line */}
-                <div className="absolute left-0 top-8 bottom-8 w-[2.01px] bg-linear-to-b from-transparent via-[#F5C16C]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative bg-[#0d1528]/60 backdrop-blur-xl border border-white/5 rounded-2xl p-8 hover:border-[#F5C16C]/40 transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="w-4 h-4 border-t border-r border-[#F5C16C]/50" />
+                </div>
 
-                <div className="flex flex-col md:flex-row md:items-start gap-6">
-                  {/* Number */}
+                <div className="flex flex-col md:flex-row md:items-center gap-8">
                   <div className="shrink-0">
-                    <div className="w-14 h-14 rounded-full border-2 border-[#F5C16C]/30 flex items-center justify-center group-hover:border-[#F5C16C] group-hover:shadow-[0_0_20px_rgba(245,193,108,0.2)] transition-all duration-500">
-                      <span className="text-[#F5C16C] font-light text-lg">
+                    <div className="w-16 h-16 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#F5C16C] transition-all duration-500 ">
+                      <span className="text-white group-hover:text-[#0B1220] font-mono font-bold text-xl">
                         {items.number}
                       </span>
                     </div>
@@ -90,11 +91,11 @@ export default function ServicesSection() {
 
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-xl md:text-2xl font-normal text-slate-100 mb-3 group-hover:text-[#F5C16C] transition-colors duration-300">
+                    <h3 className="text-xl md:text-2xl font-bold text-slate-100 mb-3 group-hover:text-[#F5C16C] transition-colors duration-300 tracking-tight">
                       {items.title}
                     </h3>
 
-                    <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-4 font-light">
+                    <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-5 font-light max-w-2xl">
                       {items.description}
                     </p>
 
@@ -102,11 +103,18 @@ export default function ServicesSection() {
                       {items.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-3 py-1 text-xs rounded-full bg-slate-800/50 text-slate-300 border border-slate-700/50 group-hover:border-[#F5C16C]/30 group-hover:text-[#F5C16C] transition-all duration-300"
+                          className="px-3 py-1 text-[10px] uppercase tracking-widest rounded-md bg-white/5 text-slate-400 border border-white/10 group-hover:border-[#F5C16C]/20 group-hover:text-white transition-all duration-300"
                         >
                           {tag}
                         </span>
                       ))}
+                    </div>
+                  </div>
+
+                  {/* Icon signal on the right */}
+                  <div className="hidden md:block opacity-0 group-hover:opacity-20 transition-opacity">
+                    <div className="w-12 h-12 border-2 border-dashed border-white rounded-full flex items-center justify-center">
+                      <div className="w-0 h-0 border-y-8 border-y-transparent border-l-12 border-l-white ml-1" />
                     </div>
                   </div>
                 </div>
@@ -115,6 +123,9 @@ export default function ServicesSection() {
           ))}
         </div>
       </div>
+
+      {/* Bottom fade-out */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-[#0B1220] to-transparent" />
     </section>
   );
 }

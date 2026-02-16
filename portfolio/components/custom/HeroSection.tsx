@@ -1,78 +1,137 @@
-import { TextHoverEffect } from "@/components/ui/text-hover-effect";
+import { Play, Scissors, Layers, Monitor, Cpu } from "lucide-react";
 
 export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#0B1220] text-slate-100 mt-5"
+      className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#050810] text-slate-100 selection:bg-[#F5C16C] selection:text-black py-20 md:py-0"
     >
-      {/* Layered background effects */}
-      <div className="absolute inset-0 pointer-events-none bg-linear-to-br from-[#0B1220] via-[#0d1528] to-[#0B1220]" />
+      {/* BG */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,#1e1b4b_0%,#050810_100%)]" />
+        <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-size-[40px_40px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
-      <div className="absolute inset-0 pointer-events-none opacity-[0.02] bg-[radial-gradient(circle_at_1px_1px,#ffffff_1px,transparent_0)] bg-size-[24px_24px]" />
+        <div className="absolute top-[-10%] left-[-5%] w-75 h-75 md:w-150 md:h-150 bg-purple-600/20 rounded-full blur-[80px] md:blur-[120px] animate-pulse" />
+        <div className="absolute bottom-[10%] right-[-5%] w-62.5 h-62.5 md:w-125 md:h-125 bg-[#F5C16C]/10 rounded-full blur-[80px] md:blur-[120px]" />
+      </div>
 
-      {/* Floating orbs */}
-      <div className="pointer-events-none absolute top-1/4 left-1/4 w-48 h-48 md:w-64 md:h-64 bg-[#F5C16C]/10 rounded-full blur-[80px] animate-pulse" />
-
-      <div
-        className="pointer-events-none absolute bottom-1/3 right-1/4 w-56 h-56 md:w-80 md:h-80 bg-purple-500/8 rounded-full blur-[100px] animate-pulse"
-        style={{ animationDelay: "1s" }}
-      />
-
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center px-6 justify-center w-full max-w-4xl mx-auto">
-        {/* Decorative line */}
-        <div className="mb-8 flex items-center gap-3">
-          <div className="h-[1.01px] w-8 md:w-12 bg-linear-to-r from-transparent to-[#F5C16C]/50" />
-
-          <p className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-slate-400/80 font-light">
-            Video Editor <br /> Visual Storyteller
-          </p>
-
-          <div className="h-[1.01px] w-8 md:w-12 bg-linear-to-l from-transparent to-[#F5C16C]/50" />
-        </div>
-
-        {/* Name */}
-        <div className="relative mb-10 px-4">
-          <div className="absolute -top-3 -left-2 md:-top-4 md:-left-4 w-6 h-6 md:w-8 md:h-8 border-l-2 border-t-2 border-[#F5C16C]/30" />
-          <div className="absolute -top-3 -right-2 md:-top-4 md:-right-4 w-6 h-6 md:w-8 md:h-8 border-r-2 border-t-2 border-[#F5C16C]/30" />
-          <div className="absolute -bottom-3 -left-2 md:-bottom-4 md:-left-4 w-6 h-6 md:w-8 md:h-8 border-l-2 border-b-2 border-[#F5C16C]/30" />
-          <div className="absolute -bottom-3 -right-2 md:-bottom-4 md:-right-4 w-6 h-6 md:w-8 md:h-8 border-r-2 border-b-2 border-[#F5C16C]/30" />
-
-          <TextHoverEffect text="PRANAV"/>
-        </div>
-
-        {/* Headline */}
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-slate-200 leading-relaxed mb-4 max-w-2xl">
-          Transforming Ideas Into
-          <span className="block mt-1 bg-linear-to-r from-[#F5C16C] via-amber-300 to-[#F5C16C] bg-clip-text text-transparent font-normal">
-            Cinematic Experiences
-          </span>
-        </h2>
-
-        <p className="max-w-xl text-sm md:text-base text-slate-400 leading-relaxed font-light mb-10">
-          Crafting compelling visual narratives, dynamic short-form content, and
-          brand stories that captivate and resonate.
-        </p>
-
-        {/* CTA */}
-        <div className="flex flex-col sm:flex-row items-center gap-4">
-          <a
-            href="#work"
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full 
-              bg-linear-to-r from-[#F5C16C] to-amber-400 px-7 py-3 text-sm font-medium 
-              text-[#0B1220] transition-all duration-300 hover:shadow-[0_0_25px_rgba(245,193,108,0.3)]
-              hover:scale-105 active:scale-95 "
-          >
-            <span className="relative z-10 tracking-wide">
-              Explore Portfolio
+      {/* --- FLOATING ICONS --- */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Premiere Pro */}
+        <div className="absolute top-[15%] right-[10%] md:top-[25%] md:right-[20%] animate-bounce duration-[3s]">
+          <div className="w-10 h-10 md:w-16 md:h-16 bg-[#00005b] border-2 border-[#31a8ff] rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(49,168,255,0.4)] rotate-12">
+            <span className="text-[#31a8ff] font-bold text-lg md:text-2xl">
+              Pr
             </span>
-          </a>
+          </div>
+        </div>
+
+        {/* After Effects */}
+        <div className="absolute bottom-[68%] left-[5%] md:bottom-[47%] md:left-[18%] animate-bounce duration-[4s]">
+          <div className="w-10 h-10 md:w-16 md:h-16 bg-[#00002e] border-2 border-[#cf96fd] rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(207,150,253,0.4)] -rotate-12">
+            <span className="text-[#cf96fd] font-bold text-lg md:text-2xl">
+              Ae
+            </span>
+          </div>
         </div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-[#0B1220] to-transparent" />
+      {/* --- MAIN CONTENT --- */}
+      <div className="relative z-10 flex flex-col items-center text-center px-6 w-full max-w-7xl">
+        {/* TITLE */}
+        <div className="relative mb-16 md:mb-12 w-full">
+          <h1 className="text-5xl sm:text-7xl md:text-9xl lg:text-[11rem] font-serif italic font-light leading-none tracking-tighter text-white">
+            Pranav
+            <span className="text-[#F5C16C] not-italic drop-shadow-[0_0_15px_#F5C16C]">
+              .
+            </span>
+          </h1>
+          <div className="absolute -bottom-6 md:-bottom-4 left-1/2 -translate-x-1/2 w-full">
+            <h2 className="text-xl sm:text-2xl md:text-5xl font-sans font-black uppercase tracking-widesh md:tracking-[0.2em] bg-linear-to-b from-white to-slate-500 bg-clip-text text-transparent">
+              Video Editor
+            </h2>
+          </div>
+        </div>
+
+        {/* THE WORKSPACE CARD */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 w-full max-w-4xl mt-10 md:mt-16">
+          {/* Left Side */}
+          <div className="md:col-span-7 relative group">
+            <div className="absolute -inset-0.5 bg-linear-to-r from-purple-500 to-[#F5C16C] rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+            <div className="relative h-48 sm:h-64 bg-slate-900 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+              <div className="absolute top-0 left-0 right-0 h-8 bg-black/40 border-b border-white/5 flex items-center px-4 justify-between">
+                <div className="flex gap-1.5">
+                  <div className="w-2 h-2 rounded-full bg-red-500/50" />
+                  <div className="w-2 h-2 rounded-full bg-amber-500/50" />
+                  <div className="w-2 h-2 rounded-full bg-green-500/50" />
+                </div>
+                <span className="text-[9px] font-mono text-slate-500">
+                  Pranav_edits.mp4
+                </span>
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Play fill="white" className="ml-1 w-5 h-5 md:w-6 md:h-6" />
+                </div>
+              </div>
+              <div className="absolute bottom-0 inset-x-0 h-10 bg-black/60 backdrop-blur-md flex items-center px-4 gap-4">
+                <div className="h-1 flex-1 bg-white/10 rounded-full overflow-hidden">
+                  <div className="h-full w-1/3 bg-[#F5C16C]" />
+                </div>
+                <span className="text-[10px] font-mono">00:12:44</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side */}
+          <div className="md:col-span-5 flex flex-col gap-4">
+            <div className="flex-1 bg-white/5 backdrop-blur-md border border-white/10 p-5 md:p-6 rounded-2xl text-left">
+              <p className="text-[#F5C16C] font-mono text-xs uppercase mb-3 tracking-widest flex items-center gap-2">
+                <Cpu size={14} /> Profile
+              </p>
+              <p className="text-slate-300 text-sm leading-relaxed">
+                Transforming raw footage into{" "}
+                <span className="text-white font-bold">Masterpieces</span>. I
+                create high-energy cinematic and eye catching visuals.
+              </p>
+            </div>
+            <a
+              href="#work"
+              className="bg-[#F5C16C] p-4 rounded-2xl flex items-center justify-center group cursor-pointer hover:bg-white transition-colors"
+            >
+              <span className="text-black font-bold uppercase text-xs tracking-tighter flex">
+                View My Works
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* --- FOOTER UI --- */}
+      <div className="absolute bottom-0 w-full bg-black/40 backdrop-blur-xl border-t border-white/5 py-3 px-4 md:px-6 flex items-center justify-between text-slate-200 cursor-default">
+        <div className="flex items-center gap-4 md:gap-6">
+          <div className="flex items-center gap-2 opacity-40">
+            <Layers size={14} className="md:w-4 md:h-4" />
+            <span className="text-[8px] md:text-[10px] font-mono uppercase">
+              Active Layers
+            </span>
+          </div>
+          <div className="flex items-center gap-2 opacity-40">
+            <Monitor size={14} className="md:w-4 md:h-4" />
+            <span className="text-[8px] md:text-[10px] font-mono uppercase">
+              4K Render Ready
+            </span>
+          </div>
+        </div>
+        <div className="flex gap-4">
+          <div className="w-7 h-7 md:w-8 md:h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#F5C16C] transition-colors cursor-pointer">
+            <Scissors
+              size={12}
+              className="text-slate-200 hover:text-black md:w-3.5 md:h-3.5"
+            />
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
