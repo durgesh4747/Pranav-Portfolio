@@ -4,20 +4,20 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative w-full overflow-hidden bg-[#0B1220] text-slate-100"
+      className="relative w-full overflow-hidden bg-[#0B1220] text-slate-100 py-1 md:py-10"
     >
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none bg-linear-to-b from-[#0B1220] via-[#0d1528] to-[#0B1220]" />
+      {/* BG */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_100%,#151238_0%,#0B1220_100%)]" />
+        <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_1px_1px,#ffffff_1px,transparent_0)] bg-size-[24px_24px]" />
 
-      <div className="absolute inset-0 pointer-events-none opacity-[0.02] bg-[radial-linear(circle_at[1.01px,#ffffff[1.01px,transparent_0)] bg-size-[24px_24px]" />
-
-      {/* Animated orbs */}
-      <div className="pointer-events-none absolute top-1/4 right-1/3 w-96 h-96 bg-[#F5C16C]/10 rounded-full blur-[120px] animate-pulse" />
-
-      <div
-        className="pointer-events-none absolute bottom-1/4 left-1/3 w-80 h-80 bg-purple-500/10 rounded-full blur-[100px] animate-pulse"
-        style={{ animationDelay: "1s" }}
-      />
+        {/* Animated orbs */}
+        <div className="pointer-events-none absolute top-1/4 right-1/3 w-96 h-96 bg-[#F5C16C]/10 rounded-full blur-[120px] animate-pulse" />
+        <div
+          className="pointer-events-none absolute bottom-1/4 left-1/3 w-80 h-80 bg-purple-500/10 rounded-full blur-[100px] animate-pulse"
+          style={{ animationDelay: "1s" }}
+        />
+      </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Header */}
@@ -47,9 +47,10 @@ export default function ContactSection() {
           {/* Left Side */}
           <ContactFormComponent />
           {/* Right Side */}
-          <ContactsInfo/>
+          <ContactsInfo />
         </div>
-        {/* Bottom Decorative Element */}
+
+        {/* Bottom Element */}
         <div className="mt-20 flex items-center justify-center gap-2 opacity-50">
           <div className="h-[1.01px] w-12 bg-linear-to-r from-transparent to-slate-700" />
           <svg
@@ -94,7 +95,7 @@ const ContactsInfo = () => {
                 Email
               </p>
               <a
-                href="mailto:pranav@example.com"
+                href="mailto:pranavpargi32@gmail.com"
                 className="text-slate-200 hover:text-[#F5C16C] transition-colors text-sm"
               >
                 pranavpargi32@gmail.com
@@ -126,7 +127,7 @@ const ContactsInfo = () => {
                 Phone
               </p>
               <a
-                href="tel:+911234567890"
+                href="tel:+916354561329"
                 className="text-slate-200 hover:text-[#F5C16C] transition-colors text-sm"
               >
                 +91 6354561329

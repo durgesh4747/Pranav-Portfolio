@@ -1,116 +1,127 @@
 import Image from "next/image";
+import { Zap, Laptop } from "lucide-react";
 
 export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative w-full overflow-hidden bg-[#0B1220] text-slate-100 py-20 md:py-32"
+      className="relative w-full overflow-hidden bg-[#0B1220] text-slate-100 py-24 md:py-32"
     >
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none bg-linear-to-b from-[#0B1220] via-[#0d1528] to-[#0B1220]" />
+      {/* BG */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#151238_0%,#0B1220_100%)] opacity-70" />
+        <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-size-[40px_40px]" />
 
-      <div className="absolute inset-0 pointer-events-none opacity-[0.02] bg-[radial-linear(circle_at_1px_1px,#ffffff_1px,transparent_0)] bg-size-[24px_24px]" />
-
-      {/* Floating accents */}
-      <div className="pointer-events-none absolute top-1/3 left-1/4 w-64 h-64 bg-purple-500/5 rounded-full blur-[100px]" />
-
-      <div className="pointer-events-none absolute bottom-1/3 right-1/4 w-80 h-80 bg-[#F5C16C]/5 rounded-full blur-[120px]" />
+        <div className="absolute top-1/4 left-[-10%] w-96 h-96 bg-purple-600/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 right-[-10%] w-96 h-96 bg-[#F5C16C]/5 rounded-full blur-[120px]" />
+      </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <div className="inline-flex items-center gap-3 mb-6">
-            <div className="h-[1.01px] w-8 bg-linear-to-r from-transparent to-[#F5C16C]/50" />
-            <p className="text-xs uppercase tracking-[0.4em] text-slate-400/80 font-light">
-              Get To Know Me
+            <div className="h-[1.1px] w-8 bg-linear-to-r from-transparent to-[#F5C16C]/50" />
+            <p className="text-[10px] uppercase tracking-[0.5em] text-[#F5C16C]/80 font-bold font-mono">
+              my_identity
             </p>
-            <div className="h-[1.01px] w-8 bg-linear-to-l from-transparent to-[#F5C16C]/50" />
+            <div className="h-[1.1px] w-8 bg-linear-to-l from-transparent to-[#F5C16C]/50" />
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-light text-slate-200 mb-4">
+          <h2 className="text-4xl md:text-6xl font-serif italic text-white mb-6 tracking-tighter">
             About{" "}
-            <span className="bg-linear-to-r from-[#F5C16C] to-amber-300 bg-clip-text text-transparent font-normal">
+            <span className="text-[#F5C16C] not-italic font-sans font-black uppercase tracking-tight">
               Me
             </span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Image */}
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          {/* Left Side - Profile */}
           <div className="relative group">
-            <div className="pointer-events-none absolute -inset-4 bg-linear-to-br from-[#F5C16C]/20 to-purple-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            {/* Outer Glow */}
+            <div className="absolute -inset-4 bg-linear-to-br from-[#F5C16C]/10 to-purple-500/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-            <div className="relative bg-linear-to-br from-slate-900/60 to-slate-800/40 backdrop-blur-sm border border-slate-700/30 rounded-2xl p-8 group-hover:border-[#F5C16C]/30 transition-all duration-500">
-              {/* Corners */}
-              <div className="absolute top-4 left-4 w-12 h-12 border-l-2 border-t-2 border-[#F5C16C]/40" />
-              <div className="absolute top-4 right-4 w-12 h-12 border-r-2 border-t-2 border-[#F5C16C]/40" />
-              <div className="absolute bottom-4 left-4 w-12 h-12 border-l-2 border-b-2 border-[#F5C16C]/40" />
-              <div className="absolute bottom-4 right-4 w-12 h-12 border-r-2 border-b-2 border-[#F5C16C]/40" />
+            <div className="relative bg-[#0d1528]/60 backdrop-blur-xl border border-white/5 rounded-2xl p-6 md:p-8 transition-all duration-500 group-hover:border-[#F5C16C]/30 group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+              {/* GUI Corners */}
+              <div className="absolute top-4 left-4 w-10 h-10 border-l-2 border-t-2 border-[#F5C16C]/20 group-hover:border-[#F5C16C]/50 transition-colors" />
+              <div className="absolute bottom-4 right-4 w-10 h-10 border-r-2 border-b-2 border-[#F5C16C]/20 group-hover:border-[#F5C16C]/50 transition-colors" />
 
-              <div className="relative aspect-square rounded-xl overflow-hidden">
+              <div className="relative aspect-square rounded-xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/Pranav_Final.jpeg"
-                  alt="Pranav"
+                  src="/Pranav_final.jpeg"
+                  alt="Pranav Pargi"
                   fill
                   sizes="(min-width: 768px) 460px, 100vw"
-                  className="object-cover rounded-xl"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  priority
                 />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-60" />
               </div>
             </div>
           </div>
 
-          {/* Content */}
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-2xl md:text-3xl font-light text-slate-100 mb-4">
+          {/* Right Side: Content */}
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <h3 className="text-2xl md:text-4xl font-serif italic text-white leading-tight">
                 Turning Vision Into{" "}
-                <span className="text-[#F5C16C] font-normal">Reality</span>
+                <span className="text-[#F5C16C] font-sans font-black uppercase not-italic">
+                  Reality
+                </span>
               </h3>
 
-              <p className="text-slate-400 leading-relaxed font-light mb-4">
-                Hello! I&apos;m Pranav pargi, an enthusiastic video editor by
-                profession. I have been working for more than two years in the
-                field of transforming raw footage into stunning visual
-                narratives...
-              </p>
+              <div className="space-y-4 text-slate-400 font-light leading-relaxed text-sm md:text-base">
+                <p>
+                  Hello! I&apos;m{" "}
+                  <span className="text-white font-medium">Pranav Pargi</span>,
+                  a creative video editor and visual storyteller. For over two
+                  years, I have specialized in transforming raw, unstructured
+                  footage into high-impact visual narratives that resonate.
+                </p>
 
-              <p className="text-slate-400 leading-relaxed font-light">
-                I specialize in creating meaningful messages that have a great
-                impact rather than simply looking attractive...
-              </p>
+                <p>
+                  My thinking centers on the{" "}
+                  <span className="text-white italic">{"why"}</span> behind
+                  every frame. I don&apos;t just edit for aesthetics; I build
+                  masterpieces that captivate audiences and leave a lasting
+                  brand impression.
+                </p>
+              </div>
             </div>
 
-            {/* Expertise */}
-            <div className="space-y-4">
-              <h4 className="text-lg font-normal text-slate-200 flex items-center gap-2">
-                <div className="w-1 h-6 bg-linear-to-b from-[#F5C16C] to-amber-400 rounded-full" />
-                Expertise
-              </h4>
+            {/* Expertise Section */}
+            <div className="space-y-5">
+              <div className="flex items-center gap-3">
+                <Laptop size={18} className="text-[#F5C16C]" />
+                <h4 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-200">
+                  I have mastery in
+                </h4>
+              </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-4">
                 {[
-                  "Adobe Premiere Pro",
-                  "After Effects",
-                  "Color Grading",
-                  "Motion Graphics",
+                  { name: "Premiere Pro", icon: <Zap size={14} /> },
+                  { name: "After Effects", icon: <Zap size={14} /> },
+                  { name: "Color Grading", icon: <Zap size={14} /> },
+                  { name: "Motion Design", icon: <Zap size={14} /> },
                 ].map((skill) => (
                   <div
-                    key={skill}
-                    className="group bg-slate-900/40 border border-slate-700/30 rounded-lg p-4 hover:border-[#F5C16C]/30 transition-all duration-300"
+                    key={skill.name}
+                    className="group flex items-center gap-3 bg-white/5 border border-white/5 rounded-xl p-4 hover:bg-[#F5C16C] transition-all duration-300"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-[#F5C16C]" />
-                      <span className="text-slate-300 text-sm group-hover:text-[#F5C16C] transition-colors">
-                        {skill}
-                      </span>
+                    <div className="text-[#F5C16C] group-hover:text-black transition-colors">
+                      {skill.icon}
                     </div>
+                    <span className="text-slate-300 text-xs font-mono group-hover:text-black transition-colors">
+                      {skill.name}
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Stats */}
-            <div className="flex flex-wrap gap-8 pt-4">
+            {/* Stats Block */}
+            <div className="pt-6 border-t border-white/5">
               <MyStats />
             </div>
           </div>
@@ -121,38 +132,29 @@ export default function AboutSection() {
 }
 
 const MyStats = () => {
+  const stats = [
+    { label: "Years Experience", value: "2+" },
+    { label: "Projects Done", value: "300+" },
+    { label: "Happy Clients", value: "200+" },
+  ];
+
   return (
-    <div className="flex flex-wrap gap-8 pt-4 cursor-default">
-      <div className="group">
-        <p className="text-3xl font-light text-[#F5C16C] mb-1 group-hover:scale-110 transition-transform">
-          2+
-        </p>
-        <p className="text-xs text-slate-500 uppercase tracking-widest">
-          Years Experience
-        </p>
-      </div>
-
-      <div className="h-16 w-[1.01px] bg-linear-to-b from-transparent via-slate-700 to-transparent" />
-
-      <div className="group">
-        <p className="text-3xl font-light text-[#F5C16C] mb-1 group-hover:scale-110 transition-transform">
-          300+
-        </p>
-        <p className="text-xs text-slate-500 uppercase tracking-widest">
-          Projects Completed
-        </p>
-      </div>
-
-      <div className="h-16 w-[1.01px] bg-linear-to-b from-transparent via-slate-700 to-transparent" />
-
-      <div className="group">
-        <p className="text-3xl font-light text-[#F5C16C] mb-1 group-hover:scale-110 transition-transform">
-          200+
-        </p>
-        <p className="text-xs text-slate-500 uppercase tracking-widest">
-          Happy Clients
-        </p>
-      </div>
+    <div className="flex flex-wrap items-center justify-between gap-6 cursor-default">
+      {stats.map((stat, idx) => (
+        <div key={stat.label} className="flex items-center gap-6">
+          <div className="group">
+            <p className="text-3xl font-sans font-black text-[#F5C16C] mb-1 group-hover:scale-110 group-hover:translate-x-1 transition-transform">
+              {stat.value}
+            </p>
+            <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">
+              {stat.label}
+            </p>
+          </div>
+          {idx !== stats.length - 1 && (
+            <div className="h-10 w-[1.1px] bg-linear-to-b from-transparent via-white/10 to-transparent hidden sm:block" />
+          )}
+        </div>
+      ))}
     </div>
   );
 };

@@ -30,6 +30,7 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-email": "^5.2.8",
+    "react-icons": "^5.5.0",
     "resend": "^6.9.2",
     "sanity": "^4.22.0",
     "styled-components": "^6.3.9",
