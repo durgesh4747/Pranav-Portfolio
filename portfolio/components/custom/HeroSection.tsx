@@ -1,4 +1,5 @@
 import { Play, Scissors, Layers, Monitor, Cpu } from "lucide-react";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
@@ -56,30 +57,12 @@ export default function HeroSection() {
         {/* THE WORKSPACE CARD */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 w-full max-w-4xl mt-10 md:mt-16">
           {/* Left Side */}
-          <div className="md:col-span-7 relative group">
+          <div className="md:col-span-6 relative group">
             <div className="absolute -inset-0.5 bg-linear-to-r from-purple-500 to-[#F5C16C] rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
             <div className="relative h-48 sm:h-64 bg-slate-900 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
               <div className="absolute top-0 left-0 right-0 h-8 bg-black/40 border-b border-white/5 flex items-center px-4 justify-between">
-                <div className="flex gap-1.5">
-                  <div className="w-2 h-2 rounded-full bg-red-500/50" />
-                  <div className="w-2 h-2 rounded-full bg-amber-500/50" />
-                  <div className="w-2 h-2 rounded-full bg-green-500/50" />
-                </div>
-                <span className="text-[9px] font-mono text-slate-500">
-                  Pranav_edits.mp4
-                </span>
               </div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Play fill="white" className="ml-1 w-5 h-5 md:w-6 md:h-6" />
-                </div>
-              </div>
-              <div className="absolute bottom-0 inset-x-0 h-10 bg-black/60 backdrop-blur-md flex items-center px-4 gap-4">
-                <div className="h-1 flex-1 bg-white/10 rounded-full overflow-hidden">
-                  <div className="h-full w-1/3 bg-[#F5C16C]" />
-                </div>
-                <span className="text-[10px] font-mono">00:12:44</span>
-              </div>
+              <Image src={"/hero_section_img.png"} alt="heroimage" width={500} height={400}/>
             </div>
           </div>
 
