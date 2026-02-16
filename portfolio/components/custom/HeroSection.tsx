@@ -1,4 +1,4 @@
-import { Play, Scissors, Layers, Monitor, Cpu } from "lucide-react";
+import { Scissors, Layers, Monitor, Cpu } from "lucide-react";
 import Image from "next/image";
 
 export default function HeroSection() {
@@ -62,7 +62,7 @@ export default function HeroSection() {
             <div className="relative h-48 sm:h-64 bg-slate-900 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
               <div className="absolute top-0 left-0 right-0 h-8 bg-black/40 border-b border-white/5 flex items-center px-4 justify-between">
               </div>
-              <Image src={"/hero_section_img.png"} alt="heroimage" width={500} height={400}/>
+              <Image src={"/hero_img.png"} alt="heroimage" width={500} height={400}/>
             </div>
           </div>
 
