@@ -48,7 +48,7 @@ export default function AboutSection() {
 
               <div className="relative aspect-square rounded-xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/Pranav_final.jpeg"
+                  src="/final_img.jpeg"
                   alt="Pranav Pargi"
                   fill
                   sizes="(min-width: 768px) 460px, 100vw"
