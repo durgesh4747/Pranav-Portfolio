@@ -19,7 +19,7 @@ export const ContentSchema = defineType({
         list: [
           { title: "Reel", value: "Reel" },
           { title: "Shorts", value: "Shorts" },
-          { title: "Events", value: "Events" },
+          { title: "Promotion Video", value: "Promotion Video" },
           { title: "Property Tour", value: "Property Tour" },
           { title: "Real Estate", value: "Real Estate" },
           { title: "Wedding", value: "Wedding" },
