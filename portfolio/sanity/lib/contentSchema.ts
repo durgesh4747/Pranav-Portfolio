@@ -32,13 +32,22 @@ export const ContentSchema = defineType({
       name: "link",
       title: "Video Link",
       type: "url",
-      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "customVideo",
+      title: "Direct Video Upload (Use if YT copyright occurs - normally not recommended to maintain speed - keep that in mind pranav)",
+      type: "file",
+      options: { accept: "video/*" },
+    }),
+    defineField({
+      name: "manualThumb",
+      title:"Manual Thumbnail (Only for directly uploaded videos)",
+      type:"image"
     }),
     defineField({
       name: "duration",
       title: "Duration",
       type: "string",
-      description: "Example: 0:30 or 3:45",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -46,7 +55,6 @@ export const ContentSchema = defineType({
       title: "Short Description",
       type: "text",
       rows: 3,
-      validation: (Rule) => Rule.max(150).warning("Keep descriptions short."),
     }),
   ],
 });
