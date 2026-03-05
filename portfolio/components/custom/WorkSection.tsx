@@ -6,13 +6,25 @@ import { Project } from "@/app/page";
 import Image from "next/image";
 import { Play, X } from "lucide-react";
 
-const getYoutubeId = (url: string) => {
+const getVideoData = (url: string) => {
   try {
     const parsedUrl = new URL(url);
-    if (parsedUrl.searchParams.get("v")) return parsedUrl.searchParams.get("v");
-    if (parsedUrl.hostname === "youtu.be") return parsedUrl.pathname.slice(1);
-    if (parsedUrl.pathname.includes("/shorts/"))
-      return parsedUrl.pathname.split("/shorts/")[1];
+
+    // Vimeo Detection
+    if (parsedUrl.hostname.includes("vimeo.com")) {
+      const id = parsedUrl.pathname.split("/").pop();
+      return { id, type: "vimeo" };
+    }
+
+    // YouTube Detection
+    let ytId = null;
+    if (parsedUrl.searchParams.get("v")) ytId = parsedUrl.searchParams.get("v");
+    else if (parsedUrl.hostname === "youtu.be")
+      ytId = parsedUrl.pathname.slice(1);
+    else if (parsedUrl.pathname.includes("/shorts/"))
+      ytId = parsedUrl.pathname.split("/shorts/")[1];
+
+    if (ytId) return { id: ytId, type: "youtube" };
     return null;
   } catch {
     return null;
@@ -27,17 +39,14 @@ export default function WorkSection({ projects }: WorkProps) {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   const getEmbedUrl = (url: string) => {
-    try {
-      const parsed = new URL(url);
-      let videoId = "";
-      if (parsed.searchParams.get("v")) videoId = parsed.searchParams.get("v")!;
-      if (parsed.hostname === "youtu.be") videoId = parsed.pathname.slice(1);
-      if (parsed.pathname.includes("/shorts/"))
-        videoId = parsed.pathname.split("/shorts/")[1];
-      return `https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0`;
-    } catch {
-      return url;
+    const data = getVideoData(url);
+    if (!data) return url;
+
+    if (data.type === "vimeo") {
+      return `https://player.vimeo.com/video/${data.id}?autoplay=1&muted=0&badge=0&autopause=0`;
     }
+
+    return `https://www.youtube.com/embed/${data.id}?autoplay=1&modestbranding=1&rel=0`;
   };
 
   useEffect(() => {
@@ -93,20 +102,28 @@ export default function WorkSection({ projects }: WorkProps) {
               onClick={() => setActiveVideo(data.videoUrl)}
               className="group relative aspect-9/16 rounded-2xl overflow-hidden cursor-pointer bg-[#1D1937] border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
             >
-              {/* Thumbnail */}
+              {/* Thumbnail Logic */}
               {(() => {
-                const videoId = getYoutubeId(data.videoUrl);
-                if (!videoId) return null;
+                const video = getVideoData(data.videoUrl);
+                if (!video) return null;
+
+                const thumbUrl =
+                  video.type === "youtube"
+                    ? `https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`
+                    : `https://vumbnail.com/${video.id}.jpg`;
+
                 return (
                   <Image
-                    src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+                    src={thumbUrl}
                     alt={data.title}
                     fill
                     sizes="(max-width: 768px) 50vw, 25vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110 brightness-75 group-hover:brightness-90"
                     unoptimized
                     onError={(e) => {
-                      e.currentTarget.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+                      if (video.type === "youtube") {
+                        e.currentTarget.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
+                      }
                     }}
                   />
                 );
