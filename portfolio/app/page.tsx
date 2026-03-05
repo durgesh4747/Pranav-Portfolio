@@ -10,19 +10,19 @@ export interface Project {
   _id: string;
   title: string;
   category: string;
-  thumbnail: string;
   videoUrl: string;
-  description?: string;
-  duration?: string;
+  duration: string;
+  directVideo?: string;
+  manualThumb?: string; 
 }
-
 const query = `*[_type == "work"] | order(_createdAt desc){
   _id,
   title,
   category,
+  duration,
   "videoUrl": link,
-  description,
-  duration
+  "directVideo": customVideo.asset->url,
+  "manualThumb": manualThumb.asset->url
 }`;
 
 export const revalidate = 60; // every minute
@@ -31,7 +31,7 @@ export default async function Home() {
   return (
     <main className="flex flex-col bg-[#151238] overflow-hidden italic">
       <NavigationBar />
-      <HeroSection /> 
+      <HeroSection />
       <WorkSection projects={projects} />
       <ServicesSection />
       <AboutSection />
