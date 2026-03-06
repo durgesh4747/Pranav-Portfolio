@@ -174,6 +174,26 @@ export default function WorkSection({ projects }: WorkProps) {
           </motion.div>
         )}
       </AnimatePresence>
+      {/* Drive Button - Forced Visibility Version */}
+      <div className="relative z-30 flex justify-center mt-16 md:mt-24 pb-8">
+        <a
+          href="https://drive.google.com/drive/folders/1v5YH-cxbTfwen5dqEWZ6c-aDIeDjyWG7?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center gap-3 px-8 py-4 rounded-full border border-[#F5C16C]/40 bg-[#F5C16C]/10 hover:bg-[#F5C16C] transition-all duration-300 shadow-[0_0_20px_rgba(245,193,108,0.1)]"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            className="w-5 h-5 text-[#F5C16C] group-hover:text-black transition-colors"
+            fill="currentColor"
+          >
+            <path d="M7.71 3.502L1.15 15l3.446 6.002L11.157 9.502h-3.447zm12.58 11.498h-6.894l3.446 6.002L23.4 15h-3.11zm-1.56-1.5l-6.59-11.498h-3.445L15.28 13.5h3.445z" />
+          </svg>
+          <span className="text-[11px] font-black uppercase tracking-[0.2em] text-white group-hover:text-black">
+            View Full Archive
+          </span>
+        </a>
+      </div>
     </section>
   );
 }
